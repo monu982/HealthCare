@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplate.ejs")%>
+
+<div class="row mt-5">
+  <div class="col-5">
+    <form action="/api/services/<%=service._id%>?_method=put" method="post">
+      <!-- Name  -->
+      <div class="mb-3">
+        <label for="Name" class="form-label"><b>Name :</b></label>
+        <input
+          type="text"
+          name="service[name]"
+          class="form-control"
+          value="<%=service.name%>"
+        />
+      </div>
+      <!-- Description  -->
+      <div class="mb-3">
+        <label for="description" class="form-label"><b>Description :</b></label>
+        <textarea
+          name="service[description]"
+          id="description"
+          class="form-control"
+          rows="4"
+        >
+<%=service.description%></textarea
+        >
+      </div>
+      <!-- Price  -->
+      <div class="mb-3">
+        <label for="price" class="form-label"><b>Price :</b></label>
+        <input
+          name="service[price]"
+          type="text"
+          class="form-control"
+          value="<%=service.price%>"
+        />
+      </div>
+
+      <button class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

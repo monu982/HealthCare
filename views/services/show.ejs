@@ -1,0 +1,35 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<div>
+  <div class="img">
+    <img src="<%=service.image%>" alt="img" />
+  </div>
+  <div class="name">
+    <div><b>Name :</b></div>
+    <div><%=service.name%></div>
+  </div>
+  <div class="description">
+    <div><b>Description :</b></div>
+    <div><%=service.description%></div>
+  </div>
+  <div class="price">
+    <div><b>Price :</b></div>
+    <div><%=service.price%></div>
+  </div>
+</div>
+
+<!-- buttons -->
+<div style="display: flex">
+  <!-- To delete the service -->
+  <form
+    action="/api/services/<%=service._id%>?_method=delete"
+    method="post"
+    style="margin-right: 10px"
+  >
+    <button class="btn btn-primary">Delete</button>
+  </form>
+
+  <!-- To edit the service  -->
+  <form action="/api/services/<%=service._id%>/edit" method="get">
+    <button class="btn btn-primary">Edit</button>
+  </form>
+</div>

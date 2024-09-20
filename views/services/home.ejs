@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<table border="4" class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  <%for(temp of services){%>
+  <tr>
+    <td>
+      <a href="/api/services/<%=temp._id%>"><%=temp.name%></a>
+    </td>
+    <td><%=temp.description%></td>
+    <td><%=temp.price%></td>
+  </tr>
+  <%}%>
+</table>
